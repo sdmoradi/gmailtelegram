@@ -46,12 +46,18 @@ def check_email():
             message = pyzmail.PyzMessage.factory(raw_message[uid][b'BODY[]'])
             subject = message.get_subject()
 
-            if SUBJECT_FILTER in subject:
+            # Determine the prefix emoji
+            if 'buy' in subject.lower():
+                subject = f"🟢 {subject}"
+            elif 'sell' in subject.lower():
+                subject = f"🔴 {subject}"
+
+            if SUBJECT_FILTER.lower() in subject.lower():
                 send_telegram_message(subject)
             else:
                 print(f"ℹ️ Skipping non-matching subject: {subject}")
 
-            seen_uids.add(uid)  # Mark UID as processed
+            seen_uids.add(uid)
 
 if __name__ == '__main__':
     print("📨 Watching Gmail inbox for TradingView alerts...")
