@@ -6,7 +6,7 @@ import requests
 # === Gmail Config ===
 EMAIL = ''
 PASSWORD = ''  # Use the 16-character app password here
-# SENDER_EMAIL = 'noreply@tradingview.com'
+SENDER_EMAIL = 'noreply@tradingview.com'
 SUBJECT_FILTER = 'Alert: order'
 
 # === Telegram Config ===
