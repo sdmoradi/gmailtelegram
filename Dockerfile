@@ -11,5 +11,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the application code
 COPY app.py .
 
+# Show logs on docker 
+ENV PYTHONUNBUFFERED=1
+
 # Run the app
 CMD ["python", "app.py"]
