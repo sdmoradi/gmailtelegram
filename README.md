@@ -64,8 +64,8 @@ python app.py
 You’ll see logs like:
 
 ```
-📬 Watching Gmail inbox for TradingView alerts...
-📤 Sent to Telegram: Alert: order sell @ CRVUSDT
+📨 Waiting for new TradingView alerts...
+🚫 Ignoring existing emails. Starting from UID 10213
 ```
 
 ---
